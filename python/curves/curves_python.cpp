@@ -713,8 +713,8 @@ BOOST_PYTHON_MODULE(curves) {
       .def("convert_piecewise_curve_to_cubic_hermite",
            &piecewise_t::convert_piecewise_curve_to_cubic_hermite<cubic_hermite_spline_t>,
            "Convert a piecewise curve to to a piecewise cubic hermite spline")
-      .def("curve_at_index", &piecewise_t::curve_at_index, return_value_policy<copy_const_reference>())
-      .def("curve_at_time", &piecewise_t::curve_at_time, return_value_policy<copy_const_reference>())
+      .def("curve_at_index", &piecewise_t::curve_at_index)
+      .def("curve_at_time", &piecewise_t::curve_at_time)
       .def("num_curves", &piecewise_t::num_curves)
       .def("saveAsText", &piecewise_t::saveAsText<piecewise_t>, bp::args("filename"),
            "Saves *this inside a text file.")
@@ -741,8 +741,8 @@ BOOST_PYTHON_MODULE(curves) {
            "where T_{min} is equal toT_{max} of the actual piecewise curve.")
       .def("is_continuous", &piecewise_bezier_t::is_continuous, "Check if the curve is continuous at the given order.",
            args("self,order"))
-      .def("curve_at_index", &piecewise_bezier_t::curve_at_index, return_value_policy<copy_const_reference>())
-      .def("curve_at_time", &piecewise_bezier_t::curve_at_time, return_value_policy<copy_const_reference>())
+      .def("curve_at_index", &piecewise_bezier_t::curve_at_index)
+      .def("curve_at_time", &piecewise_bezier_t::curve_at_time)
       .def("num_curves", &piecewise_bezier_t::num_curves)
       .def("saveAsText", &piecewise_bezier_t::saveAsText<piecewise_bezier_t>, bp::args("filename"),
            "Saves *this inside a text file.")
@@ -769,8 +769,8 @@ BOOST_PYTHON_MODULE(curves) {
            "where T_{min} is equal toT_{max} of the actual piecewise curve.")
       .def("is_continuous", &piecewise_linear_bezier_t::is_continuous,
            "Check if the curve is continuous at the given order.", args("self,order"))
-      .def("curve_at_index", &piecewise_linear_bezier_t::curve_at_index, return_value_policy<copy_const_reference>())
-      .def("curve_at_time", &piecewise_linear_bezier_t::curve_at_time, return_value_policy<copy_const_reference>())
+      .def("curve_at_index", &piecewise_linear_bezier_t::curve_at_index)
+      .def("curve_at_time", &piecewise_linear_bezier_t::curve_at_time)
       .def("num_curves", &piecewise_linear_bezier_t::num_curves)
       .def("saveAsText", &piecewise_linear_bezier_t::saveAsText<piecewise_linear_bezier_t>, bp::args("filename"),
            "Saves *this inside a text file.")
@@ -797,8 +797,8 @@ BOOST_PYTHON_MODULE(curves) {
            args("self,curve"))
       .def("is_continuous", &piecewise_SE3_t::is_continuous, "Check if the curve is continuous at the given order.",
            args("self,order"))
-      .def("curve_at_index", &piecewise_SE3_t::curve_at_index, return_value_policy<copy_const_reference>())
-      .def("curve_at_time", &piecewise_SE3_t::curve_at_time, return_value_policy<copy_const_reference>())
+      .def("curve_at_index", &piecewise_SE3_t::curve_at_index)
+      .def("curve_at_time", &piecewise_SE3_t::curve_at_time)
       .def("num_curves", &piecewise_SE3_t::num_curves)
       .def("append", &addFinalTransform,
            "Append a new linear SE3 curve at the end of the piecewise curve, defined between self.max() "
